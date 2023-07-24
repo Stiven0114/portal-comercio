@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Creacion-Comercio</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="/src/app/Comercio/crear-comercio/crear-comercio.component.css">
+  <link rel="stylesheet" href="/src/app/Comercio/crear-comercio/crear-comercio.component.js">
+
+  
+</head>
+
+
+
+
+<body>
+
+
+
+    <nav class="navbar bg-body-tertiary fixed-top">
+        <div class="container-fluid">
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Credibanco</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Solicitudes</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Comercios
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Lista Comercio</a></li>
+                    <li><a class="dropdown-item" href="#">Crear Comercio</a></li>
+                    <li><a class="dropdown-item" href="#">Actualizar Comercio</a></li>
+                    <li>
+                      <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item"  >Eliminar Comercio</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <form class="d-flex mt-3" role="search">
+                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Buscar</button>
+              </form>
+
+              <hr>
+              <div class="dropdown">
+                <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                  <strong>Cristian Gomez</strong>
+                </a>
+                <ul class="dropdown-menu text-small shadow">
+                  <li><a class="dropdown-item" href="#">Perfil</a></li>
+                  <li><a class="dropdown-item" href="#">Configuraciones</a></li>
+                
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Cerrar Sesion</a></li>
+                </ul>
+              </div>
+            </div>
+            </div>
+          </div>
+      </nav>
+<br>
+<br>
+
+<!-----------FORMULARIO--------------->
+
+      <div class="container w-80 bg-Light mt-5  rounded shadow">
+        <div class="row  align-self-center">
+          
+          <div class="col col-ml-10 bg-white p-5 rounded">
+            <div class="text-center">
+              <div class=" text-white">
+                <img src="https://i0.wp.com/notasynoticiasenred.com/wp-content/uploads/2023/01/CredibanCo.png?fit=1200%2C159&ssl=1" class="img-fluid" alt="..." style="max-width: 60%;height:60px ">
+              </div>
+            </div>
+            <br>
+
+            <form (submit)="addTask(solicitudRadicado, comercioCodigoUnico)" class="row g-3">
+                <div class="col-md-4">
+                    <label for="validationDefault02" class="form-label">Solicitud Radicado</label>
+                    <input maxlength="8" type="text" class="form-control" #solicitudRadicado id="validationDefault02" value="" required onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                  </div>
+                <div class="col-md-4">
+                  <label for="validationDefault02" class="form-label">Comercio Código Unico</label>
+                  <input maxlength="8" type="text" class="form-control" #comercioCodigoUnico id="validationDefault02" value="" required onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                </div>
+                <div class="col-md-4">
+                    <label for="validationDefault02" class="form-label">Comercio Identificación</label>
+                    <input maxlength="10" type="text" class="form-control" id="validationDefault02" value="" required onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                  </div>
+                 <!---<div class="col-md-4">
+                    <label for="validationDefault02" class="form-label">Banco Cuenta</label>
+                    <input maxlength="9" type="text" class="form-control" id="validationDefault02" value="" required onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="validationDefault02" class="form-label">Repre Legal Identificación</label>
+                    <input maxlength="8" type="text" class="form-control" id="validationDefault02" value="" required onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="validationDefault02" class="form-label">ComercioMCC</label>
+                    <input maxlength="4" type="text" class="form-control" id="validationDefault02" value="" required onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="validationDefault02" class="form-label">Banco Código</label>
+                    <input maxlength="2" type="text" class="form-control" id="validationDefault02" value="" required onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                  </div>
+                <div class="col-md-4">
+                    <label for="validationDefault02" class="form-label">Comercio Tipo Venta</label>
+                    <input maxlength="1" type="text" class="form-control" id="validationDefault02" value="" required onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                  </div>
+
+
+<!----ComercioListaMovimientos  Falta---->
+
+
+
+
+
+
+                <!---<div class="col-md-4">
+                    <label for="validationDefault02" class="form-label">Relación Código Unico</label>
+                    <input type="text" maxlength="2" class="form-control" id="validationDefault02" value="" required onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="validationDefault02" class="form-label">Relación Tipo</label>
+                    <input maxlength="2" type="text" class="form-control" id="validationDefault02" value="" required onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="validationDefault02" class="form-label">Comercio Corres Código Ciudad</label>
+                    <input maxlength="5" type="text" class="form-control" id="validationDefault02" value="" required onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="validationDefault02" class="form-label">Repre Legal Código Ciudad</label>
+                    <input maxlength="5" type="text" class="form-control" id="validationDefault02" value="" required onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="validationDefault02" class="form-label">Comercio Código Ciudad</label>
+                    <input maxlength="5" type="text" class="form-control" id="validationDefault02" value="" required onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                  </div>
+
+                  <div class="col-md-4">
+                    <label for="validationCustom03" class="form-label">Repre Legal dirección</label >
+                    <input type="text" class="form-control" id="validationCustom03" required >
+                    <div class="invalid-feedback">
+                      Poner La Direccion.
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <label for="validationCustom03" class="form-label">Comercio Corres dirección</label>
+                    <input type="text" class="form-control" id="validationCustom03" required>
+                    <div class="invalid-feedback">
+                      Poner La dirección.
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <label for="validationCustom03" class="form-label">Comercio dirección</label>
+                    <input type="text" class="form-control" id="validationCustom03" required>
+                    <div class="invalid-feedback">
+                      Poner La dirección.
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <label for="validationDefault02" class="form-label">Comercio Nombre</label>
+                    <input type="text" class="form-control" id="validationDefault02" value="" required >
+                  </div>
+
+                  <div class="col-md-4">
+                    <label for="validationDefault02" class="form-label">Comercio Razon Social</label>
+                    <input type="text" class="form-control" id="validationDefault02" value="" required >
+                  </div>
+
+                  <div class="col-md-4">
+                    <label for="validationDefault02" class="form-label">Repre Legal Nombre</label>
+                    <input type="text" class="form-control" id="validationDefault02" value="" required >
+                  </div>
+
+                <div class="col-md-4">
+                  <label for="validationDefaultUsername" class="form-label">Comercio Mail</label>
+                  <div class="input-group">
+                    <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                    <input type="text" class="form-control" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" required>
+                  </div>
+                </div>
+                
+                <div class="col-md-4">
+                  <label for="validationDefault03" class="form-label">Comercio Corres Telefono</label>
+                  <input type="text" class="form-control" id="validationDefault03" required onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                  
+                </div>
+
+                <div class="col-md-4">
+                    <label for="validationDefault03" class="form-label">Repre Legal Telefono </label>
+                    <input maxlength="10" type="text" class="form-control" id="validationDefault03" required onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                    
+                  </div>
+                  <div class="col-md-4">
+                    <label for="validationDefault03" class="form-label">Comercio Telefono </label>
+                    <input maxlength="10" type="text" class="form-control" id="validationDefault03" required onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                    
+                  </div>
+                  <div class="col-md-4">
+                    <label for="validationDefault03" class="form-label">Comercio Identificacion Tipo</label>
+                    <input maxlength="10" type="text" class="form-control" id="validationDefault03" required onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                    
+                  </div>
+                  <div class="col-md-4">
+                    <label for="validationDefault03" class="form-label">Banco Sucursal Cuenta</label>
+                    <input maxlength="1" type="text" class="form-control" id="validationDefault03" required onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                    
+                  </div>
+                  <div class="col-md-4">
+                    <label for="validationDefault03" class="form-label">Banco Tipo Cuenta</label>
+                    <input maxlength="1" type="text" class="form-control" id="validationDefault03" required onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                    
+                  </div>
+                  <div class="col-md-4">
+                    <label for="validationDefault03" class="form-label">Comercio Código RETFTE</label>
+                    <input maxlength="1" type="text" class="form-control" id="validationDefault03" required onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                    
+                  </div>
+                  <div class="col-md-4">
+                    <label for="validationDefault03" class="form-label">Comercio Código Modalidad</label>
+                    <input maxlength="1" type="text" class="form-control" id="validationDefault03" required onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                    
+                  </div>
+                  <div class="col-md-4">
+                    <label for="validationDefault03" class="form-label">Solicitud Terminaliza</label>
+                    <input maxlength="1" type="text" class="form-control" id="validationDefault03" required onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                    
+                  </div>
+
+                  <!---ComercioTelefonoAUX------>
+                  
+                <!--<div class="col-md-4">
+                    <label for="validationDefault03" class="form-label"> Comercio Tipo</label>
+                    <input maxlength="1" type="text" class="form-control" id="validationDefault03" required onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                    
+                  </div>
+                  <div class="col-md-4">
+                    <label for="validationDefault03" class="form-label">Comercio Tipo Sociedad</label>
+                    <input maxlength="1" type="text" class="form-control" id="validationDefault03" required onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                    
+                  </div>
+                  <div class="col-md-4">
+                    <label for="validationDefault03" class="form-label">  Comercio Porcentaje RETFTE</label>
+                    <input type="text" class="form-control" id="validationDefault03" required onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                    
+                  </div>
+                  <div class="col-md-4">
+                    <label for="validationDefault03" class="form-label">  Comercio Porcentaje RETICA</label>
+                    <input type="text" class="form-control" id="validationDefault03" required onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                    
+                  </div>
+                  <div class="col-md-4">
+                    <label for="validationDefault03" class="form-label"> Comercio Porcentaje RETIVA</label>
+                    <input type="text" class="form-control" id="validationDefault03" required onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                    
+                  </div>
+
+                   <!------TIMESTAMP  solicitudFechaRegistroCU------>
+                
+                <!---<div class="col-md-4">
+                  <label for="validationDefault03" class="form-label">Solicitud Usuario</label>
+                  <input type="text" class="form-control" id="validationDefault03" required >
+                  
+                </div>
+
+                <div class="col-md-4">
+                    <label for="validationDefault03" class="form-label">Solicitud Token</label>
+                    <input type="text" class="form-control" id="validationDefault03" required >
+                    
+                  </div> 
+
+                  
+
+                  <!------comercioListaFranquicia------->
+
+                  <!-----bancoListaComision----->
+
+                  <!--------solicitudListaParametros---------->
+
+                 
+
+                
+                
+                <div class=" col-12">
+                  <button class="btn btn-warning btn-block">
+                    send
+                  </button>
+
+                    <!----<a href="#" button  type="submit" class="btn btn-outline-warning ">Guardar
+                    </a>--->
+                </div>
+              </form>
+        </div>
+      
+          </div>
+        </div>
+      
+      
+    
+
+
+
+    
+        <app-root></app-root>
+
+
+</body>
+</html>
